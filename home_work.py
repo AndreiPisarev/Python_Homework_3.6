@@ -23,12 +23,12 @@ MOSCOW-LONDON: 1,553.86 mi
 Необходимо посчитать суммарное расстояние пути в километрах с точностью до сотых.
 """
 
-list_file = ['temps.txt', 'currencies.txt', 'travel.txt']
 import osa
 import os
 import math
 from time import time
 
+list_file = ['temps.txt', 'currencies.txt', 'travel.txt']
 
 client = osa.Client('http://fx.currencysystem.com/webservices/CurrencyServer4.asmx?WSDL')
 
@@ -69,7 +69,6 @@ def convert_to_rub(mount, from_currency):
 
 
 if __name__ == '__main__':
-
     path_file = path_files(list_file[1])
     travel_coast(path_file)
 
