@@ -44,7 +44,7 @@ def log_time(func):
 
 
 def path_files(name_file):
-    current_dir = os.path.dirname(os.path.abspath(name_file))
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     path_file = os.path.join(current_dir, name_file)
     return path_file
 
@@ -53,8 +53,8 @@ def travel_coast(path_file):
     summa = 0
     with open(path_file) as file:
         for line in file:
-            travel, mount, from_currency = line.rstrip().split(' ')
-            summa += convert_to_rub(int(mount), from_currency)
+            travel, amount, from_currency = line.rstrip().split(' ')
+            summa += convert_to_rub(float(amount), from_currency)
     print('Сумма поездки в RUB {}'.format(summa))
     return summa
 
