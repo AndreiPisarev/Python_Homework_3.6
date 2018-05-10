@@ -60,11 +60,11 @@ def travel_coast(path_file):
 
 
 @log_time
-def convert_to_rub(mount, from_currency):
+def convert_to_rub(amount, from_currency):
     to_currency = 'RUB'
-    res = client.service.ConvertToNum('', from_currency, to_currency, mount, False)
+    res = client.service.ConvertToNum('', from_currency, to_currency, amount, False)
     res = math.ceil(res)
-    print('{} в {} это {} в RUB'.format(mount, from_currency, res))
+    print('{} в {} это {} в RUB'.format(amount, from_currency, res))
     return res
 
 
